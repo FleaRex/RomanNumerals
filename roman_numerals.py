@@ -29,5 +29,11 @@ def is_valid_roman_numerals(roman_value):
         return False
     return True
 
+
 def perform_conversion(roman_value):
     return 13
+
+
+def convert_letter(letter):
+    values = {"i": 1, "v": 5, "x": 10, "l": 50, "c": 100, "d": 500, "m": 1000}
+    return values[letter.lower()]
