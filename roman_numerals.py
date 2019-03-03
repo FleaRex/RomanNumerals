@@ -1,3 +1,4 @@
+from functools import reduce
 import json
 import six
 
@@ -47,7 +48,10 @@ def is_valid_roman_numerals(roman_value):
 
 
 def perform_conversion(roman_value):
-    return 13
+    character_values = map(lambda letter: convert_letter(letter), list(roman_value))
+    return reduce(
+        lambda rolling_total, next_value: rolling_total + next_value, character_values
+    )
 
 
 def convert_letter(letter):

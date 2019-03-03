@@ -28,3 +28,6 @@ class TestRomanToArabic(object):
         for roman, arabic in values.items():
             assert convert_letter(roman) == arabic
             assert convert_letter(roman.upper()) == arabic
+
+    def test_conversion(self):
+        assert perform_conversion("iii") == 3
