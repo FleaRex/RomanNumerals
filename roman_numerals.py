@@ -16,7 +16,7 @@ def lambda_handler(event, context):
 def convert_roman_to_arabic(roman_value):
     if not is_valid_roman_numerals(roman_value):
         raise Exception("Error: " + str(roman_value) + " is not in Roman Numerals")
-    return 13
+    return perform_conversion(roman_value)
 
 
 def is_valid_roman_numerals(roman_value):
@@ -28,3 +28,6 @@ def is_valid_roman_numerals(roman_value):
     ):
         return False
     return True
+
+def perform_conversion(roman_value):
+    return 13
