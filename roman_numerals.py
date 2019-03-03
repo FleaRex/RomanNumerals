@@ -6,7 +6,7 @@ def lambda_handler(event, context):
     body = {}
 
     body["romanvalue"] = roman_value
-    body["arabicvalue"] = 13
+    body["arabicvalue"] = convert_roman_to_arabic(roman_value)
 
     # raise Exception('Error: ' + roman_value + ' is not in Roman Numerals')
 
@@ -14,3 +14,7 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': body
     }
+
+
+def convert_roman_to_arabic(roman_value):
+    return 13
