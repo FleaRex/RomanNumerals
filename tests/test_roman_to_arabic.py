@@ -6,6 +6,9 @@ class TestRomanToArabic(object):
     def test_basic(self):
         assert convert_roman_to_arabic("xiii") == 13
 
+    def test_case_insensitive(self):
+        assert convert_roman_to_arabic("XIII") == 13
+
     def test_non_string_throws(self):
         with pytest.raises(Exception):
             convert_roman_to_arabic(12)

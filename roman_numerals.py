@@ -22,6 +22,7 @@ def convert_roman_to_arabic(roman_value):
 def is_valid_roman_numerals(roman_value):
     if not isinstance(roman_value, six.string_types):
         return False
+    roman_value = roman_value.lower()
     if not all(
         map(lambda x: x in ["i", "v", "x", "l", "c", "d", "m"], list(roman_value))
     ):
