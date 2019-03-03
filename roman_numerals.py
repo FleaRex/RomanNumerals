@@ -48,7 +48,14 @@ def is_valid_roman_numerals(roman_value):
 
 
 def perform_conversion(roman_value):
-    character_values = map(lambda letter: convert_letter(letter), list(roman_value))
+    character_values = list(
+        map(lambda letter: convert_letter(letter), list(roman_value))
+    )
+
+    for i in range(len(character_values) - 1):
+        if character_values[i] < character_values[i + 1]:
+            character_values[i] = character_values[i] * -1
+
     return reduce(
         lambda rolling_total, next_value: rolling_total + next_value, character_values
     )

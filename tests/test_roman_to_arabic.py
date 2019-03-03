@@ -23,11 +23,31 @@ class TestRomanToArabic(object):
         with pytest.raises(Exception):
             convert_roman_to_arabic("cxvq")
 
-    def test_convert(self):
+    def test_convert_letters(self):
         values = {"i": 1, "v": 5, "x": 10, "l": 50, "c": 100, "d": 500, "m": 1000}
         for roman, arabic in values.items():
             assert convert_letter(roman) == arabic
             assert convert_letter(roman.upper()) == arabic
 
     def test_conversion(self):
-        assert perform_conversion("iii") == 3
+        values = {
+            "iii": 3,
+            "xiv": 14,
+            "i": 1,
+            "ii": 2,
+            "iii": 3,
+            "iv": 4,
+            "v": 5,
+            "vi": 6,
+            "vii": 7,
+            "viii": 8,
+            "ix": 9,
+            "x": 10,
+            "l": 50,
+            "c": 100,
+            "d": 500,
+            "m": 1000,
+        }
+        for roman, arabic in values.items():
+            assert perform_conversion(roman) == arabic
+            assert perform_conversion(roman.upper()) == arabic
