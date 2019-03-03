@@ -1,2 +1,2 @@
 test:
-	echo "Hello World"
+	pipenv run pytest
