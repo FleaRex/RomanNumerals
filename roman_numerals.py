@@ -1,5 +1,6 @@
 import json
 
+
 def lambda_handler(event, context):
     roman_value = event["romanvalue"]
 
@@ -10,10 +11,7 @@ def lambda_handler(event, context):
 
     # raise Exception('Error: ' + roman_value + ' is not in Roman Numerals')
 
-    return {
-        'statusCode': 200,
-        'body': body
-    }
+    return {"statusCode": 200, "body": body}
 
 
 def convert_roman_to_arabic(roman_value):
