@@ -1,6 +1,23 @@
 import json
 import six
 
+roman_numeral_conversions = {
+    "i": 1,
+    "v": 5,
+    "x": 10,
+    "l": 50,
+    "c": 100,
+    "d": 500,
+    "m": 1000,
+    "I": 1,
+    "V": 5,
+    "X": 10,
+    "L": 50,
+    "C": 100,
+    "D": 500,
+    "M": 1000,
+}
+
 
 def lambda_handler(event, context):
     roman_value = event["romanvalue"]
@@ -22,11 +39,10 @@ def convert_roman_to_arabic(roman_value):
 def is_valid_roman_numerals(roman_value):
     if not isinstance(roman_value, six.string_types):
         return False
-    roman_value = roman_value.lower()
-    if not all(
-        map(lambda x: x in ["i", "v", "x", "l", "c", "d", "m"], list(roman_value))
-    ):
+
+    if not all(map(lambda x: x in roman_numeral_conversions.keys(), list(roman_value))):
         return False
+
     return True
 
 
@@ -35,5 +51,4 @@ def perform_conversion(roman_value):
 
 
 def convert_letter(letter):
-    values = {"i": 1, "v": 5, "x": 10, "l": 50, "c": 100, "d": 500, "m": 1000}
-    return values[letter.lower()]
+    return roman_numeral_conversions[letter]
