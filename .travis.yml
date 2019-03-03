@@ -20,5 +20,5 @@ deploy:
     region: "eu-west-2"
     role: "arn:aws:iam::255446756174:role/lambda_invoke_function_assume_apigw_role"
     runtime: "python3.7"
-    module_name: "lambda_function"
+    module_name: "roman_numerals"
     handler_name: "lambda_handler"
