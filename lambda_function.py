@@ -6,7 +6,7 @@ def lambda_handler(event, context):
     body = {}
 
     body["romanvalue"] = roman_value
-    body["arabicvalue"] = 14
+    body["arabicvalue"] = 13
 
     # raise Exception('Error: ' + roman_value + ' is not in Roman Numerals')
 
